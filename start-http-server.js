@@ -65,7 +65,7 @@ export const startHttp1SecureServer = async (handleHttpRequest, http1SecureServe
 export const startHttp2Server = (handleHttpRequest, http2ServerOptions) => {
     const http2Server = createHttp2Server(handleHttpRequest);
 
-    http2Server.listen(http2ServerOptions.port);
+    http2Server.listen(http2ServerOptions.port, '127.0.0.1');
 };
 
 /**
@@ -76,5 +76,5 @@ export const startHttp2Server = (handleHttpRequest, http2ServerOptions) => {
 export const startHttp1Server = (handleHttpRequest, http1ServerOptions) => {
     const http1Server = createHttp1Server(handleHttpRequest);
 
-    http1Server.listen(http1ServerOptions.port);
+    http1Server.listen(http1ServerOptions.port, '127.0.0.1');
 };
